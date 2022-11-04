@@ -1,0 +1,132 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: lightblue;
+    /* background: linear-gradient(90deg, #6024ea, #8e0bd5); */
+}
+
+.container {
+    width: auto;
+    height: auto;
+}
+
+.wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    /* gap: 5rem; */
+    padding-left: 5rem;
+    padding-right: 5rem;
+    width: 100vw;
+    height: 100vh;
+    /* background: red; */
+}
+
+.wrapper .colorBox {
+    border-radius: 10px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30rem;
+    height: 30rem;
+    background: rgb(255, 255, 255);
+}
+
+.colorBox{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.colorBox>#color, .colorBox>#hexColor {
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+    padding: 15px;
+    border-radius: 10px;
+    opacity: 0.8;
+    font-weight: bolder;
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #FFFFFF;
+    color: black;
+}
+
+.wrapper .colorElements {
+    display: flex;
+    width: 100vh;
+    flex-direction: column;
+}
+
+.wrapper .colorElements>input[type="range"] {
+    margin-bottom: 5rem;
+    width: 100%;
+    height: 1.2rem;
+}
+
+/* CSS property for slider */
+input[type="range"] {
+    -webkit-appearance: none;
+    height: 10px;
+    width: 80%;
+    border-radius: 10px;
+    outline: none;
+}
+
+.colorElements>label {
+    font-size: 20px;
+    font-weight: 600;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+/* CSS property for slider thumb */
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 25px;
+    width: 25px;
+    background: grey;
+    border: 1px solid black;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+    background-color: rgb(32, 47, 255);
+}
+
+.colorElements #red {
+    background: linear-gradient(90deg, #000, red);
+}
+
+.colorElements #green {
+    background: linear-gradient(90deg, #000, green);
+}
+
+.colorElements #blue {
+    background: linear-gradient(90deg, #000, blue);
+}
+
+
+@media only screen and (max-width: 768px) {
+    .wrapper {
+        padding-left: 3rem;
+        padding-right: 3rem;
+    }
+
+    .wrapper .colorBox {
+        width: 80vw;
+        height: 50vh;
+    }
+
+    .colorBox>#color {
+        max-width: auto;
+    }
+
+    .wrapper .colorElements>input[type="range"] {
+        margin: 0.5rem 0;
+    }
+}
